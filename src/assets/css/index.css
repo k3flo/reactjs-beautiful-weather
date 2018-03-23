@@ -1,16 +1,6 @@
-@import url('//fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic');
-
 body {
     font-family: 'Lato', Arial, Helvetica, sans-serif;
     position: relative;
-}
-
-.search-input {
-    width: 200px
-}
-
-.forecast-table {
-    width: 300px
 }
 
 .shadow {

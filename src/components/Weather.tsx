@@ -2,7 +2,6 @@ import * as _ from 'lodash';
 import * as React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-
 import { fetchingData, fetchingDataFailure, fetchingDataSuccess, setAllWeatherDataIntoStore } from '../redux/actions';
 import WeatherData from './WeatherData';
 import {
@@ -180,8 +179,6 @@ class Weather extends React.Component<any, WeatherState> {
 			} else if (error) {
 				return (
 					<div className="alert alert-danger alert-dismissible" role="alert">
-						<button type="button" className="close" data-dismiss="alert" aria-label="Close">
-							<span aria-hidden="true">&times;</span></button>
 						{error}
 					</div>
 				);
@@ -194,7 +191,7 @@ class Weather extends React.Component<any, WeatherState> {
 					{renderCurrentWeather()}
 				</div>
 			</div>
-		)
+		);
 	}
 }
 

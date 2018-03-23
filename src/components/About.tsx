@@ -1,12 +1,13 @@
 import * as React from 'react';
 
-export const About = () =>
+export const About = () => (
 	<div className='container'>
 		<div className='row justify-content-md-center'>
 			<div className='col-8'>
 				<h1 className='text-center'>About</h1>
 				<p>
-					This is an open source weather web application using React, Redux, Typescript, Webpack4, Bootstrap4 and D3v5.
+					This is an open source weather web application using React, Redux, Typescript, Webpack4, React Toolbox,
+					Bootstrap4 and D3v5.
 				</p>
 				<p>
 					Source code:
@@ -27,16 +28,21 @@ export const About = () =>
 					</li>
 					<li>
 						<a href='https://webpack.js.org/concepts/'>Webpack</a>
-						- Webpack is a module bundler..
+						- Webpack is a module bundler.
+					</li>
+					<li>
+						<a href='http://react-toolbox.io/'>React Toolbox</a>
+						- React Toolbox is a set of React components that implement Google's Material Design specification. It's
+						powered by CSS Modules and harmoniously integrates with your webpack workflow.
+					</li>
+					<li>
+						<a href='https://v4-alpha.getbootstrap.com/'>Bootstrap4</a>
+						- Bootstrap is one of the most popular HTML, CSS, and JS frameworks in the world for building responsive,
+						mobile-first projects on the web.
 					</li>
 					<li>
 						<a href='https://d3js.org/'>D3</a>
 						- D3.js is a JavaScript library for manipulating documents based on data.
-					</li>
-					<li>
-						<a href='http://getbootstrap.com/'>Bootstrap4</a>
-						- Bootstrap is a sleek, intuitive, and powerful front-end framework for faster and easier web development.
-						.
 					</li>
 				</ul>
 				<p>
@@ -58,4 +64,5 @@ export const About = () =>
 				</ul>
 			</div>
 		</div>
-	</div>;
+	</div>
+);

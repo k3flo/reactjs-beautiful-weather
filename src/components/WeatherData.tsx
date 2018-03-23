@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import * as moment from 'moment';
 import * as d3 from 'd3';
 import { Tab, Tabs } from 'react-toolbox/lib/tabs';
-
 import { CurrentWeatherTable } from './CurrentWeatherTable';
 import { ToolTip } from './ToolTip';
 
@@ -180,7 +179,7 @@ class WeatherData extends React.Component<any, WeatherDataState> {
 				                     weather={weather}
 				                     timezone={timezone}/>
 				<div className='col-8'>
-					<h5 className='text-center' style={{paddingBottom: 10}}>Weather and forecasts in {location}</h5>
+					<h5 className='text-center'>Weather and forecasts in {location}</h5>
 					<Tabs index={this.state.index} onChange={this.handleTabChange}>
 						<Tab label='Today'>
 							{renderForecast(0, 720, 360)}
