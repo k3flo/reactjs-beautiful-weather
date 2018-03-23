@@ -1,15 +1,16 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
-import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
 import * as moment from 'moment';
 import * as d3 from 'd3';
+import { Tab, Tabs } from 'react-toolbox/lib/tabs';
 
 import { CurrentWeatherTable } from './CurrentWeatherTable';
 import { ToolTip } from './ToolTip';
 
 interface WeatherDataState {
-	tooltip: any
+	tooltip: any,
+	index: number
 }
 
 class WeatherData extends React.Component<any, WeatherDataState> {
@@ -17,6 +18,7 @@ class WeatherData extends React.Component<any, WeatherDataState> {
 		super(props);
 
 		this.state = {
+			index: 0,
 			tooltip: {
 				display: false,
 				data: {
@@ -31,6 +33,10 @@ class WeatherData extends React.Component<any, WeatherDataState> {
 		this.showToolTip = this.showToolTip.bind(this);
 		this.hideToolTip = this.hideToolTip.bind(this);
 	}
+
+	handleTabChange = (index: number) => {
+		this.setState({index: index});
+	};
 
 	showToolTip(e: any) {
 		e.target.setAttribute('fill', '#FFFFFF');
@@ -175,21 +181,16 @@ class WeatherData extends React.Component<any, WeatherDataState> {
 				                     timezone={timezone}/>
 				<div className='col-8'>
 					<h5 className='text-center' style={{paddingBottom: 10}}>Weather and forecasts in {location}</h5>
-					<Tabs>
-						<TabList>
-							<Tab>Today</Tab>
-							<Tab>Tomorrow</Tab>
-							<Tab>After Tomorrow</Tab>
-						</TabList>
-						<TabPanel>
+					<Tabs index={this.state.index} onChange={this.handleTabChange}>
+						<Tab label='Today'>
 							{renderForecast(0, 720, 360)}
-						</TabPanel>
-						<TabPanel>
+						</Tab>
+						<Tab label='Tomorrow'>
 							{renderForecast(8, 720, 360)}
-						</TabPanel>
-						<TabPanel>
+						</Tab>
+						<Tab label='After tomorrow'>
 							{renderForecast(16, 720, 360)}
-						</TabPanel>
+						</Tab>
 					</Tabs>
 				</div>
 			</div>

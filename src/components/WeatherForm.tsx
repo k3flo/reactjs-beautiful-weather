@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { Button } from 'react-toolbox/lib/button';
+import { Input } from 'react-toolbox/lib/input';
 
 interface WeatherFormProps {
 	onSearch: any
@@ -35,7 +37,7 @@ export class WeatherForm extends React.Component<WeatherFormProps, WeatherFormSt
 
 	render() {
 		return (
-			<form onSubmit={this.handleSubmit} className="form-inline my-2 my-lg-0">
+			<form onSubmit={this.handleSubmit}>
 				<input
 					type='text'
 					value={this.state.location}
@@ -45,7 +47,15 @@ export class WeatherForm extends React.Component<WeatherFormProps, WeatherFormSt
 					required
 					disabled={this.props.isDisabled}
 				/>
-				<button className='btn btn-outline-primary my-2 my-sm-0'>Search</button>
+				{/*<Input*/}
+					{/*className="search-input"*/}
+					{/*type='text'*/}
+					{/*label='Search weather by city'*/}
+					{/*value={this.state.location}*/}
+					{/*onChange={this.handleChange}*/}
+					{/*disabled={this.props.isDisabled}*/}
+				{/*/>*/}
+				<Button label='Search' raised accent/>
 			</form>
 		);
 	}
